@@ -35,5 +35,25 @@ var detectCycle = function (head) {
   return null;
 };
 
-var detectCycle = function (head) {};
+var detectCycle = function (head) {
+  // 环形链表结论：快慢指针相遇发生在慢指针没走完一圈的时候
+  // 慢指针从相遇点走的时候，head也从头移动，他们一定在环入口相遇
+  if (head === null) {
+    return null;
+  }
+  let slow = head,
+    fast = head;
+  while (fast != null && fast.next != null) {
+    slow = slow.next;
+    fast = fast.next.next;
+    if (slow == fast) {
+      while (head !== slow) {
+        head = head.next;
+        slow = slow.next;
+      }
+      return head;
+    }
+  }
+  return null;
+};
 // @lc code=end
