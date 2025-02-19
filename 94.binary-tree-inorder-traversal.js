@@ -46,5 +46,4 @@ var inorderTraversal = function (root) {
   }
   return res;
 };
-var inorderTraversal = function (root) {};
 // @lc code=end
