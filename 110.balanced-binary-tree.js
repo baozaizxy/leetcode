@@ -18,6 +18,9 @@
  * @return {boolean}
  */
 var isBalanced = function (root) {
+  if (!root) {
+    return true;
+  }
   const tree_height = (node) => {
     if (!node) {
       return 0;
@@ -27,12 +30,12 @@ var isBalanced = function (root) {
       return -1;
     }
     let right_height = tree_height(node.right);
-    if (right_height === -1 || Math.abs(left_height - right_height > 1)) {
+    if (right_height === -1 || Math.abs(left_height - right_height) > 1) {
       return -1;
     }
     return Math.max(left_height, right_height) + 1;
   };
 
-  return tree_height(root) !== -1;
+  return tree_height(root) > 0;
 };
 // @lc code=end
