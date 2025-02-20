@@ -18,7 +18,7 @@
  * @param {_Node} head
  * @return {_Node}
  */
-var copyRandomList = function (head) {
+var copyRandomList = function (head, cachedNode = new Map()) {
   if (!head) {
     return null;
   }
