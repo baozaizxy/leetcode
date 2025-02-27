@@ -15,6 +15,7 @@ var canFinish = function (numCourses, prerequisites) {
   let colors = new Array(numCourses);
   colors.fill(0);
 
+  // 把每个 prerequisites[i]=[a,b] 看成一条有向边 b→a，构建一个有向图 g。
   for (const [a, b] of prerequisites) {
     g[b].push(a);
   }
