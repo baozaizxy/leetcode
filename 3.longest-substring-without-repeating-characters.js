@@ -28,7 +28,8 @@ var lengthOfLongestSubstring = function (s) {
   return ans;
 };
 
-// 找到第一个右端点，然后从此开始找以每个右端点稳定下左端点的位置
+// 找到第一个重复右端点，不断缩小左边界直至右边界合理，再探索新的右边界，同时更新结果
+// 滑动窗口
 var lengthOfLongestSubstring = function (s) {
   let ans = 0;
   let left = 0;
